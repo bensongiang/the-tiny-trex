@@ -10,7 +10,7 @@ $.fn.extend({Cubexy: function(options) {
 						 cssDefault:true,
 						 cssCambioColor:'actual',
 						 cssActivePart:'active',
-						 cssParteUnica:'seleccionado',
+						 cssParteUnica:'selection',
 						 cssColorPicker:'colors'
 					}
 					
@@ -126,7 +126,7 @@ $.fn.extend({Cubexy: function(options) {
 			$('#'+idDownload).click(function(){
 				var dataURL = canvas.toDataURL('image/png');
 				$('#'+idDownload).attr('href',dataURL);
-				$('#'+idDownload).attr('download',"Archivo.png");
+				$('#'+idDownload).attr('download',"MyTinyTrex.png");
 				
 			});
 			$('#'+idPreview).click(function(){

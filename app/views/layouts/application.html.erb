@@ -16,17 +16,27 @@
         <%= link_to 'Blog', blog_path, class: 'nav-link' %>
       </nav>
     </header>
-    <div id="content" class="container">
+    <div id="content">
       <%= yield %>
     </div>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">&copy;The Tiny Trex <span class="glyphicon glyphicon-heart"></span></span>
       </div>
     </footer>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script>
       $('#avatar').Cubexy();
+    </script>
+    <script>
+    $('#menu img').click(function(){
+      $('.tab-active').removeClass('tab-active');
+      $(this).addClass('tab-active');
+      $('#avatar >div').hide();
+      $('#avatar >div#'+$(this).attr('data-tab')).show();
+      });
+      $('#avatar >div').hide();
+      $('#avatar >div#background').show();
     </script>
   </body>
 </html>

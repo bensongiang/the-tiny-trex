@@ -7,7 +7,8 @@ body {
 }
 
 body > #content {
-  padding: 100px 15px 0; 
+  padding: 100px 15px 90px;
+  background: #63B3FF;
 
   h1 {
     font-size: 24px;
@@ -15,11 +16,17 @@ body > #content {
     text-transform: uppercase;
     letter-spacing: 1;
   }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1;
+  }
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;
+  bottom: 0;*/
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -29,7 +36,11 @@ body > #content {
 
 
 header {
+
   .navbar {
+    background: #fff;
+    box-shadow: 0px 2px 4px rgba(29,41,52,0.15);
+
     flex-direction: row;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -50,9 +61,71 @@ header {
   }
 }
 
-#avatar {
+#canvas {
+  width: 100%;
+  max-width: 640px;
+  max-height: 640px;
+  height: 100%;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 15px 20px rgba(29,41,52,0.15);
+  display: block;
+  margin: 30px auto;
+}
+
+#menu {
+  margin-bottom: 30px;
+  padding: 15px;
+
+  .tab-active {
+    border: 1px solid #63B3FF;
+
+  }
+
   img {
+    background: #fff;
     max-width: 100px;
     width: 100%;
+    box-shadow: 0px 2px 4px rgba(29,41,52,0.15);
+    opacity: 0.35;
+    margin: 4px 2px;
+  }
+  img:hover, .tab-active {
+    border: 2px solid #63B3FF;
+    border-style: inset;
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+  }
+}
+
+#avatar {
+  margin-bottom: 30px;
+  padding: 15px;
+
+  div {
+    padding: 15px;
+  }
+
+  .actual {
+    
+  }
+
+  img {
+    background: #fff;
+    max-width: 100px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(29,41,52,0.15);
+    opacity: 0.35;
+    margin: 4px 2px;
+  }
+  img:hover, .active {
+    border: 2px solid #63B3FF;
+    border-style: inset;
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
   }
 }
