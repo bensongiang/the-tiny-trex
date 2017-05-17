@@ -1,98 +1,192 @@
-<canvas width="640" height="640" id="canvas"></canvas>
-<a id="Download">Download</a>
-<a id="Preview">Preview</a>
-<input type="hidden" id="colors"  />
+<div id="avatar-builder" class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+        <canvas width="640" height="640" id="canvas"></canvas>
+        <a id="Download" class="btn btn-primary">Download</a>
+        <a id="Preview" class="btn btn-secondary">Preview</a>
+        <input type="hidden" id="colors"  />
+    </div>
 
-<div id="menu">
-    <%= image_tag("1_background/1.png", "data-tab" => "background", "class" => "tab-active") %>
-    <%= image_tag("2_back/1.png", "data-tab" => "back") %>
-    <%= image_tag("3_tail/1.png", "data-tab" => "tail") %>
-    <%= image_tag("4_feet/1.png", "data-tab" => "feet") %>
-    <%= image_tag("5_shoes/1.png", "data-tab" => "shoes") %>
-    <%= image_tag("6_body/1.png", "data-tab" => "body") %>
-    <%= image_tag("7_bodydetails/1.png", "data-tab" => "bodydetails") %>
-    <%= image_tag("8_head/1.png", "data-tab" => "head") %>
-    <%= image_tag("9_skin/1.png", "data-tab" => "skin") %>
-    <%= image_tag("10_mouth/1.png", "data-tab" => "mouth") %>
-    <%= image_tag("11_costume/1.png", "data-tab" => "costume") %>
-    <%= image_tag("12_accessories/1.png", "data-tab" => "accessories") %>
-    <%= image_tag("13_hands/1.png", "data-tab" => "hands") %>
-    <%= image_tag("14_eyes/1.png", "data-tab" => "eyes") %>
-    <%= image_tag("15_mustache/1.png", "data-tab" => "mustache") %>
-    <%= image_tag("16_faceaccessories/1.png", "data-tab" => "faceaccessories") %>
-    <%= image_tag("17_hats/1.png", "data-tab" => "hats") %>
-    <%= image_tag("18_emoticons/1.png", "data-tab" => "emoticons") %>
-</div>
-<div id="avatar" class="text-center">
-    <h2>Options</h2>
-	<div id="background" class="actual">
-	   <%= image_tag "1_background/1.png" %>
-       <%= image_tag "1_background/2.png" %>
-       <%= image_tag "1_background/3.png" %>
-       <%= image_tag "1_background/4.png" %>
-       <%= image_tag "1_background/5.png" %>
-       <%= image_tag "1_background/6.png" %>
-       <%= image_tag "1_background/7.png" %>
-       <%= image_tag "1_background/8.png" %>
-       <%= image_tag "1_background/9.png" %>
-       <%= image_tag "1_background/10.png" %>
-	</div>
-	<div id="back">
-	   <%= image_tag "2_back/1.png" %>
-       <%= image_tag "2_back/2.png" %>
-       <%= image_tag "2_back/3.png" %>
-       <%= image_tag "2_back/4.png" %>
-       <%= image_tag "2_back/5.png" %>
-       <%= image_tag "2_back/6.png" %>
-       <%= image_tag "2_back/7.png" %>
-       <%= image_tag "2_back/8.png" %>
-	</div>
-	<div id="tail">
-		<%= image_tag "3_tail/1.png" %>
-	</div>
-	<div id="feet">
-		<%= image_tag "4_feet/1.png" %>
-	</div>
-	<div id="shoes">
-		<%= image_tag "5_shoes/1.png" %>
-	</div>
-	<div id="body">
-		<%= image_tag "6_body/1.png" %>
-	</div>
-	<div id="bodydetails">
-		<%= image_tag "7_bodydetails/1.png" %>
-	</div>
-	<div id="head">
-		<%= image_tag "8_head/1.png" %>
-	</div>
-	<div id="skin">
-		<%= image_tag "9_skin/1.png" %>
-	</div>
-	<div id="mouth">
-		<%= image_tag "10_mouth/1.png" %>
-	</div>
-	<div id="costume">
-		<%= image_tag "11_costume/1.png" %>
-	</div>
-	<div id="accessories">
-		<%= image_tag "12_accessories/1.png" %>
-	</div>
-	<div id="hands">
-		<%= image_tag "13_hands/1.png" %>
-	</div>
-	<div id="eyes">
-		<%= image_tag "14_eyes/1.png" %>
-	</div>
-	<div id="mustache">
-		<%= image_tag "15_mustache/1.png" %>
-	</div>
-	<div id="faceaccessories">
-		<%= image_tag "16_faceaccessories/1.png" %>
-	</div>
-	<div id="hats">
-		<%= image_tag "17_hats/1.png" %>
-	</div>
-	<div id="emoticons">
-		<%= image_tag "18_emoticons/1.png" %>
-	</div>
+    <div id="avatar-options" class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+        <div class="row">
+            <div id="menu" class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <h2>Customization</h2>
+                <%= image_tag("1_background/1.png", "data-tab" => "background", "class" => "tab-active") %>
+                <%= image_tag("2_back/1.png", "data-tab" => "back") %>
+                <%= image_tag("3_tail/1.png", "data-tab" => "tail") %>
+                <%= image_tag("4_feet/1.png", "data-tab" => "feet") %>
+                <%= image_tag("5_shoes/1.png", "data-tab" => "shoes") %>
+                <%= image_tag("6_body/1.png", "data-tab" => "body") %>
+                <%= image_tag("7_bodydetails/1.png", "data-tab" => "bodydetails") %>
+                <%= image_tag("8_head/1.png", "data-tab" => "head") %>
+                <%= image_tag("9_skin/1.png", "data-tab" => "skin") %>
+                <%= image_tag("10_mouth/1.png", "data-tab" => "mouth") %>
+                <%= image_tag("11_costume/1.png", "data-tab" => "costume") %>
+                <%= image_tag("12_accessories/1.png", "data-tab" => "accessories") %>
+                <%= image_tag("13_hands/1.png", "data-tab" => "hands") %>
+                <%= image_tag("14_eyes/1.png", "data-tab" => "eyes") %>
+                <%= image_tag("15_mustache/1.png", "data-tab" => "mustache") %>
+                <%= image_tag("16_faceaccessories/1.png", "data-tab" => "faceaccessories") %>
+                <%= image_tag("17_hats/1.png", "data-tab" => "hats") %>
+                <%= image_tag("18_emoticons/1.png", "data-tab" => "emoticons") %>
+            </div><!--menu-->
+            <div id="avatar" class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <h2>Options</h2>
+            	<div id="background" class="actual">
+            	   <%= image_tag "1_background/1.png" %>
+                   <%= image_tag "1_background/2.png" %>
+                   <%= image_tag "1_background/3.png" %>
+                   <%= image_tag "1_background/4.png" %>
+                   <%= image_tag "1_background/5.png" %>
+                   <%= image_tag "1_background/6.png" %>
+                   <%= image_tag "1_background/7.png" %>
+                   <%= image_tag "1_background/8.png" %>
+                   <%= image_tag "1_background/9.png" %>
+                   <%= image_tag "1_background/10.png" %>
+            	</div>
+            	<div id="back">
+            	   <%= image_tag "2_back/1.png" %>
+                   <%= image_tag "2_back/2.png" %>
+                   <%= image_tag "2_back/3.png" %>
+                   <%= image_tag "2_back/4.png" %>
+                   <%= image_tag "2_back/5.png" %>
+                   <%= image_tag "2_back/6.png" %>
+                   <%= image_tag "2_back/7.png" %>
+                   <%= image_tag "2_back/8.png" %>
+            	</div>
+            	<div id="tail">
+            		<%= image_tag "3_tail/1.png" %>
+                    <%= image_tag "3_tail/2.png" %>
+            	</div>
+            	<div id="feet">
+            		<%= image_tag "4_feet/1.png" %>
+            	</div>
+            	<div id="shoes">
+            		<%= image_tag "5_shoes/1.png" %>
+                    <%= image_tag "5_shoes/2.png" %>
+                    <%= image_tag "5_shoes/3.png" %>
+                    <%= image_tag "5_shoes/4.png" %>
+            	</div>
+            	<div id="body">
+            		<%= image_tag "6_body/1.png" %>
+            	</div>
+            	<div id="bodydetails">
+            		<%= image_tag "7_bodydetails/1.png" %>
+                    <%= image_tag "7_bodydetails/2.png" %>
+                    <%= image_tag "7_bodydetails/3.png" %>
+                    <%= image_tag "7_bodydetails/4.png" %>
+            	</div>
+            	<div id="head">
+            		<%= image_tag "8_head/1.png" %>
+            	</div>
+            	<div id="skin">
+            		<%= image_tag "9_skin/1.png" %>
+                    <%= image_tag "9_skin/2.png" %>
+                    <%= image_tag "9_skin/3.png" %>
+                    <%= image_tag "9_skin/4.png" %>
+                    <%= image_tag "9_skin/5.png" %>
+            	</div>
+            	<div id="mouth">
+            		<%= image_tag "10_mouth/1.png" %>
+            	</div>
+            	<div id="costume">
+            		<%= image_tag "11_costume/1.png" %>
+                    <%= image_tag "11_costume/2.png" %>
+                    <%= image_tag "11_costume/3.png" %>
+                    <%= image_tag "11_costume/4.png" %>
+                    <%= image_tag "11_costume/5.png" %>
+                    <%= image_tag "11_costume/6.png" %>
+                    <%= image_tag "11_costume/7.png" %>
+                    <%= image_tag "11_costume/8.png" %>
+                    <%= image_tag "11_costume/9.png" %>
+                    <%= image_tag "11_costume/10.png" %>
+                    <%= image_tag "11_costume/11.png" %>
+            	</div>
+            	<div id="accessories">
+            		<%= image_tag "12_accessories/1.png" %>
+                    <%= image_tag "12_accessories/2.png" %>
+                    <%= image_tag "12_accessories/3.png" %>
+                    <%= image_tag "12_accessories/4.png" %>
+                    <%= image_tag "12_accessories/5.png" %>
+                    <%= image_tag "12_accessories/6.png" %>
+                    <%= image_tag "12_accessories/7.png" %>
+                    <%= image_tag "12_accessories/8.png" %>
+            	</div>
+            	<div id="hands">
+            		<%= image_tag "13_hands/1.png" %>
+                    <%= image_tag "13_hands/2.png" %>
+                    <%= image_tag "13_hands/3.png" %>
+                    <%= image_tag "13_hands/4.png" %>
+                    <%= image_tag "13_hands/5.png" %>
+                    <%= image_tag "13_hands/6.png" %>
+                    <%= image_tag "13_hands/7.png" %>
+                    <%= image_tag "13_hands/8.png" %>
+            	</div>
+            	<div id="eyes">
+            		<%= image_tag "14_eyes/1.png" %>
+                    <%= image_tag "14_eyes/2.png" %>
+                    <%= image_tag "14_eyes/3.png" %>
+                    <%= image_tag "14_eyes/4.png" %>
+                    <%= image_tag "14_eyes/5.png" %>
+                    <%= image_tag "14_eyes/6.png" %>
+                    <%= image_tag "14_eyes/7.png" %>
+                    <%= image_tag "14_eyes/8.png" %>
+                    <%= image_tag "14_eyes/9.png" %>
+                    <%= image_tag "14_eyes/10.png" %>
+                    <%= image_tag "14_eyes/11.png" %>
+                    <%= image_tag "14_eyes/12.png" %>
+                    <%= image_tag "14_eyes/13.png" %>
+                    <%= image_tag "14_eyes/14.png" %>
+                    <%= image_tag "14_eyes/15.png" %>
+                    <%= image_tag "14_eyes/16.png" %>
+                    <%= image_tag "14_eyes/17.png" %>
+                    <%= image_tag "14_eyes/18.png" %>
+                    <%= image_tag "14_eyes/19.png" %>
+                    <%= image_tag "14_eyes/20.png" %>
+                    <%= image_tag "14_eyes/21.png" %>
+                    <%= image_tag "14_eyes/22.png" %>
+            	</div>
+            	<div id="mustache">
+            		<%= image_tag "15_mustache/1.png" %>
+                    <%= image_tag "15_mustache/2.png" %>
+                    <%= image_tag "15_mustache/3.png" %>
+                    <%= image_tag "15_mustache/4.png" %>
+                    <%= image_tag "15_mustache/5.png" %>
+                    <%= image_tag "15_mustache/6.png" %>
+            	</div>
+            	<div id="faceaccessories">
+            		<%= image_tag "16_faceaccessories/1.png" %>
+                    <%= image_tag "16_faceaccessories/2.png" %>
+                    <%= image_tag "16_faceaccessories/3.png" %>
+                    <%= image_tag "16_faceaccessories/4.png" %>
+                    <%= image_tag "16_faceaccessories/5.png" %>
+                    <%= image_tag "16_faceaccessories/6.png" %>
+                    <%= image_tag "16_faceaccessories/7.png" %>
+            	</div>
+            	<div id="hats">
+            		<%= image_tag "17_hats/1.png" %>
+                    <%= image_tag "17_hats/2.png" %>
+                    <%= image_tag "17_hats/3.png" %>
+                    <%= image_tag "17_hats/4.png" %>
+                    <%= image_tag "17_hats/5.png" %>
+                    <%= image_tag "17_hats/6.png" %>
+                    <%= image_tag "17_hats/7.png" %>
+                    <%= image_tag "17_hats/8.png" %>
+                    <%= image_tag "17_hats/9.png" %>
+                    <%= image_tag "17_hats/10.png" %>
+                    <%= image_tag "17_hats/11.png" %>
+            	</div>
+            	<div id="emoticons">
+            		<%= image_tag "18_emoticons/1.png" %>
+                    <%= image_tag "18_emoticons/2.png" %>
+                    <%= image_tag "18_emoticons/3.png" %>
+                    <%= image_tag "18_emoticons/4.png" %>
+                    <%= image_tag "18_emoticons/5.png" %>
+                    <%= image_tag "18_emoticons/6.png" %>
+                    <%= image_tag "18_emoticons/7.png" %>
+                    <%= image_tag "18_emoticons/8.png" %>
+            	</div>
+            </div> <!--avatar -->
+        </div>
+    </div> <!--avatar options -->
+
 </div>
