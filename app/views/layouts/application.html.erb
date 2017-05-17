@@ -8,9 +8,25 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="container">
+    <header>
+      <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="/">The Tiny Trex</a>
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
+        <%= link_to 'About', about_path, class: 'nav-link' %>
+        <%= link_to 'Blog', blog_path, class: 'nav-link' %>
+      </nav>
+    </header>
+    <div id="content" class="container">
       <%= yield %>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script>
+      $('#avatar').Cubexy();
+    </script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 {
   "name": "thetinytrex",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "tether": "^1.4.0"
+  }
 }
