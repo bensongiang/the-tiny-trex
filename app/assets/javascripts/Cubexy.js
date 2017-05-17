@@ -5,7 +5,7 @@ $.fn.extend({Cubexy: function(options) {
 						 idInputColor:'colors',
 						 idDownload:'Download',
 						 idPreview:'Preview',
-						 CanvasSalida:'canvas',
+						 CanvasChange:'canvas',
 						 attImagenGrande:'src',
 						 cssDefault:true,
 						 cssCambioColor:'actual',
@@ -20,7 +20,7 @@ $.fn.extend({Cubexy: function(options) {
 					var idDownload=options.idDownload;
 					var idPreview=options.idPreview;
 					
-					var CanvasSalida=options.CanvasSalida;
+					var CanvasChange=options.CanvasChange;
 					var attImagenGrande=options.attImagenGrande;
 					var cssDefault=options.cssDefault;
 					
@@ -32,7 +32,7 @@ $.fn.extend({Cubexy: function(options) {
 		 if(cssDefault){$('body').before(Styles); }
 		 
          $('#'+idInputColor).before('<canvas style="display:none" id="tmpCanvas" width="640" height="640"></canvas>');   
-         var canvas = document.getElementById(CanvasSalida);
+         var canvas = document.getElementById(CanvasChange);
          var ctx = canvas.getContext("2d");
 		 ctx.clearRect(0, 0, ctx.width, ctx.height);
             var ImagenesIniciales = [];
@@ -51,6 +51,7 @@ $.fn.extend({Cubexy: function(options) {
             IniciarPintadoAvatar();
              $('#' + id + ' > div >img').css( 'cursor', 'pointer' );
              $('#' + id + ' > div >img').click(function(){
+                ctx.clearRect(0, 0, ctx.width, ctx.height);                    
                 $(this).parent().children('img').removeClass(cssActivePart);
                 $(this).addClass(cssActivePart);
                 $('.'+cssCambioColor).removeClass(cssCambioColor);
