@@ -1,4 +1,9 @@
-<div class="container">
+<% content_for :head do %>
+  <!-- your tags -->
+  <meta content="Home of Digital Dinosaurs" name="description">
+<% end %>
+
+<div class="container pad-30">
   <div class="row">
     <div class="col-sm-12 text-center">
       <div class="main-message">
@@ -6,8 +11,28 @@
         <p>Make a unique Trex from over 1000 combinations!</p>
       </div>
       
-		<%= render 'builder' %>
-      
+		  <%= render 'builder' %>
+    </div>
+  </div>
+</div>
+<div class="panel">
+  <div class="container pad-30">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>See what you can make!</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div id="avatar-samples" class="col-sm-12 text-center pad-vert-30">
+        <%= image_tag "avatar_previews/1.png" %>
+        <%= image_tag "avatar_previews/2.png" %>
+        <%= image_tag "avatar_previews/3.png" %>
+        <%= image_tag "avatar_previews/4.png" %>
+        <%= image_tag "avatar_previews/5.png" %>
+        <%= image_tag "avatar_previews/6.png" %>
+        <%= image_tag "avatar_previews/7.png" %>
+        <%= image_tag "avatar_previews/8.png" %>
+      </div>
     </div>
   </div>
 </div>

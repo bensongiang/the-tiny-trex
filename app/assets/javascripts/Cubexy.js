@@ -135,5 +135,44 @@ $.fn.extend({Cubexy: function(options) {
 				var dataURL = canvas.toDataURL('image/png');
 				$('#'+idPreview).attr('href',dataURL);
 			});
+
+            var token = "";
+
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var uploadButton = document.getElementById("upload");
+            var img = new Image()
+            var dataURL = canvas.toDataURL('image/png');
+
+            img.crossOrigin = 'Anonymous'
+            img.src = ""
+            img.onload = function(){ ctx.drawImage(img, 0, 0) }
+
+            uploadButton.addEventListener('click', function () {
+                fbUpload(token)
+            })
+
+            function fbUpload(token){
+                var dataURL = canvas.toDataURL('image/jpeg', 1.0)
+              var blob = dataURItoBlob(dataURL)
+              var formData = new FormData()
+              formData.append('access_token', token)
+              formData.append('source', blob)
+
+              var xhr = new XMLHttpRequest();
+              xhr.open( 'POST', 'https://graph.facebook.com/me/photos', true )
+              xhr.onload = xhr.onerror = function() {
+                console.log( xhr.responseText )
+              };
+              xhr.send( formData )
+            }
+
+            function dataURItoBlob(dataURI) {
+              var byteString = atob(dataURI.split(',')[1]);
+              var ab = new ArrayBuffer(byteString.length);
+              var ia = new Uint8Array(ab);
+              for (var i = 0; i < byteString.length; i++) { ia[i] = byteString.charCodeAt(i); }
+              return new Blob([ab], { type: 'image/jpeg' });
+            }
 	}
 });
