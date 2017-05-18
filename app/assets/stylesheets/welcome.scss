@@ -4,7 +4,7 @@
 
 body {
 	font-family: "Open Sans", sans-serif;
-  background: linear-gradient(160deg, #4cf5fd, #5e00f5);
+  background: url('bg-geometry.png') repeat;
 }
 
 img, div, p, a {
@@ -95,7 +95,7 @@ body > #content {
   }
 
   .main-message {
-    color: #fff;
+    padding: 30px 0;
   }
 
   .panel {
@@ -186,7 +186,6 @@ header {
   #menu {
     margin-bottom: 15px;
     padding: 15px;
-    background: #ececec;
     border-radius: 3px 3px 0 0;
     max-height: 640px;
     overflow-y: scroll;
@@ -235,6 +234,7 @@ header {
     padding: 15px;
     max-height: 640px;
     overflow-y: scroll;
+    background: #fff;
 
     div {
       padding: 15px;
