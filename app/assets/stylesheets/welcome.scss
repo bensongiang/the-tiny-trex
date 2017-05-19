@@ -37,6 +37,8 @@ img, div, p, a {
   padding-bottom: 15px;
 }
 
+
+
 body > #content {
   padding-top: 60px;
   /*background-image: url('background-texture.png');*/
@@ -144,6 +146,14 @@ header {
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-appearance: none;
+
+    ::-webkit-scrollbar { 
+      display: none; 
+    }
+
+    .navbar-brand svg {
+      width: 32px;
+    }
 
   	a.nav-link {
       color: #A7AFB9;
