@@ -29,6 +29,25 @@
     </script>
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '262596577539662',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <header>
       <nav class="navbar">
         <a class="navbar-brand" href="/"><%= show_svg("logo/trex-logo.svg") %></a>
@@ -41,7 +60,7 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">&copy;The Tiny Trex <span class="glyphicon glyphicon-heart"></span></span>
+        <span class="text-muted">&copy;TheTinyTrex <span class="glyphicon glyphicon-heart"></span></span>
       </div>
     </footer>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
