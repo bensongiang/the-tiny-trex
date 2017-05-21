@@ -135,8 +135,17 @@ $.fn.extend({Cubexy: function(options) {
 				var dataURL = canvas.toDataURL('image/png');
 				$('#'+idPreview).attr('href',dataURL);
 			});
+            function dataURItoBlob(dataURI) {
+                var byteString = atob(dataURI.split(',')[1]);
+                var ab = new ArrayBuffer(byteString.length);
+                var ia = new Uint8Array(ab);
+                for (var i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+                return new Blob([ab], {type: 'image/png'});
+            }
             $('#shareFB').click(function () {
-                var data = $('#canvas')[0].toDataURL("image/png");
+                var data = canvas.toDataURL('image/png');
                 try {
                     blob = dataURItoBlob(data);
                 } catch (e) {
@@ -145,14 +154,14 @@ $.fn.extend({Cubexy: function(options) {
                 FB.getLoginStatus(function (response) {
                     console.log(response);
                     if (response.status === "connected") {
-                        postImageToFacebook(response.authResponse.accessToken, "Canvas to Facebook/Twitter", "image/png", blob, window.location.href);
+                        postImageToFacebook(response.authResponse.accessToken, "The Tiny Trex", "image/png", blob, window.location.href);
                     } else if (response.status === "not_authorized") {
                         FB.login(function (response) {
-                            postImageToFacebook(response.authResponse.accessToken, "Canvas to Facebook/Twitter", "image/png", blob, window.location.href);
+                            postImageToFacebook(response.authResponse.accessToken, "The Tiny Trex", "image/png", blob, window.location.href);
                         }, {scope: "publish_actions"});
                     } else {
                         FB.login(function (response) {
-                            postImageToFacebook(response.authResponse.accessToken, "Canvas to Facebook/Twitter", "image/png", blob, window.location.href);
+                            postImageToFacebook(response.authResponse.accessToken, "The Tiny Trex", "image/png", blob, window.location.href);
                         }, {scope: "publish_actions"});
                     }
                 });
@@ -186,7 +195,7 @@ $.fn.extend({Cubexy: function(options) {
                                         "/me/feed",
                                         "POST",
                                         {
-                                            "message": "",
+                                            "message": "Hello hoomans. This is my Tiny Trex. Go make your own!",
                                             "picture": response.images[0].source,
                                             "link": window.location.href,
                                             "name": 'Look at my Tiny Trex!',
@@ -206,6 +215,9 @@ $.fn.extend({Cubexy: function(options) {
                                 }
                             }
                         );
+                        
+                        bootstrap_alert('Posted to Facebook successfully!');
+       
                     },
                     error: function (shr, status, data) {
                         console.log("error " + data + " Status " + shr.status);
@@ -214,6 +226,10 @@ $.fn.extend({Cubexy: function(options) {
                         //console.log('Post to facebook Complete');
                     }
                 });
+            }
+            function bootstrap_alert(message){
+                $('#alert_placeholder').html('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><strong>Woohoo!</strong> <span>'+message+'</span></div>');
+                $('#alert_placeholder').focus();
             }
 
 	}

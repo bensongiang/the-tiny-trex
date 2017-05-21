@@ -93,6 +93,15 @@ body > #content {
     border: none;
   }
 
+  .fb {
+    background: #3b5998;
+    color: #ffffff;
+
+    &:hover {
+      background: #253e73;
+    }
+  }
+
   .light {
     color: #fff;
   }
@@ -104,6 +113,12 @@ body > #content {
   .panel {
     background: #fff;
     padding: 30px 0;
+  }
+
+  #image-buttons {
+    .btn {
+      margin-top: 15px;
+    }
   }
 
   #avatar-samples {
