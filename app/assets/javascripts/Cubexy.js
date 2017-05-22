@@ -144,6 +144,7 @@ $.fn.extend({Cubexy: function(options) {
                 }
                 return new Blob([ab], {type: 'image/png'});
             }
+
             $('#shareFB').click(function () {
                 var data = canvas.toDataURL('image/png');
                 try {
@@ -229,7 +230,9 @@ $.fn.extend({Cubexy: function(options) {
             }
             function bootstrap_alert(message){
                 $('#alert_placeholder').html('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><strong>Woohoo!</strong> <span>'+message+'</span></div>');
-                $('#alert_placeholder').focus();
+                $('html, body').animate({
+                    scrollTop: ($('#alert_placeholder').offset().top)
+                },500);
             }
 
 	}
